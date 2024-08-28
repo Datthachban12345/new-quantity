@@ -1,0 +1,247 @@
+.quantity-number-child{
+    box-shadow: 0px 4px 0px 0px #028CDE, 0px 0px 15px 0px #00000026;
+    text-align: center;
+}
+.quantity-number-title{
+    opacity: 0; /* Ẩn ban đầu */
+    transition: opacity 0.5s ease-out;
+}
+.quantity-number-title.visible {
+    opacity: 1; /* Hiển thị khi nhìn thấy */
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide-text-img{
+    filter: brightness(0) invert(1);
+    transform: translateX(-16px);
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quantity-number-parent{
+    grid-template-columns: repeat(2, 1fr); /* Tạo 2 cột, mỗi cột chiếm 1 phần của chiều rộng */
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 8px;
+    justify-items: center; /* Căn giữa theo trục ngang */
+    align-items: center; 
+}
+
+.swiper-slide-text-btn{
+    border: 1px solid #FFFFFF;
+    color: #044AA0;
+    display: flex;
+    position:relative;
+    background: white;
+    border-radius: 100px;
+    align-items: center;
+    cursor:pointer;
+    justify-content: space-evenly;
+    transition: all .7s ease; 
+}
+.swiper-slide-text-btn:hover{
+    background:#044AA0;
+    color:white;
+    transition: all .7s ease;
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+    font-size:16px;
+}
+.button-news-next-1{
+    border: 1px solid #044AA0;
+    width:40px;
+    height:40px;
+    color: #044AA0;
+    background:#fff;
+    cursor: pointer;
+    transform: translateX(30px) translateY(35px);
+    transition: all .5s ease;
+}
+.button-news-next-1:hover{
+    background-color: #044AA0;
+    border: 1px solid #fff;
+    color:white;
+    transition: all .5s ease;
+}
+
+.button-news-prev-1{
+    border: 1px solid #044AA0;
+    width:40px;
+    background:#fff;
+    height:40px;
+    cursor: pointer;
+    transform: translateX(-30px) translateY(35px);
+    transition: all .5s ease;
+}
+.button-news-prev-1:hover{
+    background-color: #044AA0;
+    border: 1px solid #fff;
+    color:white;
+    transition: all .5s ease;
+}
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slide-child-2-detail{
+    height:215px;
+    width:100%;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    transition: all .5s ease;
+    text-overflow: ellipsis;
+}
+.slide-child-2-detail:hover{
+    height:100%;
+    background: #00000080;
+    transition: all .5s ease;
+}
+.swiper-slide-text-btn-2{
+    color: #1494CA;
+    display: flex;
+    position:relative;
+    background: white;
+    border-radius: 100px;
+    align-items: center;
+    cursor:pointer;
+    justify-content: space-evenly;
+    transition: all .7s ease; 
+}
+.swiper-slide-text-btn-2:hover{
+    background:#1494CA;
+    color:white;
+    transition: all .7s ease;
+}
+.swiper-slide-text-2{
+    height:0;
+    width:0;
+    opacity:0;
+    transition: opacity .7s ease;
+}
+.swiper-slide-text-btn-2{
+    height:0;
+    width:0;
+    opacity:0;
+    transition: opacity .7s ease;
+}
+.slide-child-2-parent{
+    box-sizing: border-box;
+}
+.slide-child-2-parent:hover > .swiper-slide-title-2{
+    padding-bottom: 12px;
+    transition: all .7s ease;
+}
+.slide-child-2-parent:hover > .swiper-slide-text-btn-2{
+    height:45px;
+    opacity:1;
+    width:139px;
+    border: 1px solid #FFFFFF;
+    transition: opacity border .7s ease;
+}
+.hover_color:hover{
+    color: orange;
+    transition: all .7s ease;
+}
+
+.slide-child-2-parent:hover > .swiper-slide-text-2{
+    height:auto;
+    width:auto;
+    padding-bottom:12px;
+    opacity:1;
+    transition: all .7s ease;
+}
+.button-news-prev-2{
+    background-color:#044AA0;
+    color:white;
+    border: 1px solid #044AA0;
+    transition: all .7s ease;
+}
+.button-news-next-2{
+    background-color:#044AA0;
+    color:white;
+    border: 1px solid #044AA0;
+    transition: all .7s ease;
+}
+.button-news-next-2:hover{
+    background:white;
+    color:#044AA0;
+    border: 1px solid #044AA0;
+    transition: all .7s ease;
+}
+.button-news-prev-2:hover{
+    background:white;
+    color:#044AA0;
+    border: 1px solid #044AA0;
+    transition: all .7s ease;
+}
+@media screen and (min-width:1024px) and (max-width:1081px){
+    .button-news-next-1{
+        width:35px;
+        height:35px;
+        transform: translateX(10px) translateY(35px);
+    }
+    .button-news-prev-1{
+        width:35px;
+        height:35px;
+        transform: translateX(-10px) translateY(35px);
+    }
+}
+@media screen and (min-width:1200px){
+    .container{
+        width:1200px !important;
+    }
+}
+@media screen and (max-width:450px){
+    .quantity-number-parent{
+        grid-template-columns: repeat(1, 1fr); /* Tạo 2 cột, mỗi cột chiếm 1 phần của chiều rộng */
+        grid-template-rows: repeat(1, 1fr);
+        grid-gap: 8px;
+        justify-items: center; /* Căn giữa theo trục ngang */
+        align-items: center; 
+    }
+    .quantity.h-\[630px\]{
+        height:1000px;
+    }
+    .quantity-number-child{
+        width:290px;
+        height:216px;
+    }
+}
+@media screen and (min-width:511px) and (max-width:640px){
+    .quantity.h-\[630px\]{
+        height:560px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:830px){
+    .button-news-next-1{
+        width:35px;
+        height:35px;
+        transform: translateX(10px) translateY(35px);
+    }
+    .button-news-prev-1{
+        width:35px;
+        height:35px;
+        transform: translateX(-10px) translateY(35px);
+    }
+}
