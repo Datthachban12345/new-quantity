@@ -163,6 +163,9 @@ body {
     color: orange;
     transition: all .7s ease;
 }
+.hover_color{
+    transition: all .7s ease;
+}
 
 .slide-child-2-parent:hover > .swiper-slide-text-2{
     height:auto;
@@ -194,6 +197,22 @@ body {
     color:#044AA0;
     border: 1px solid #044AA0;
     transition: all .7s ease;
+}
+.news-small-2-hover-img::before{
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .5) 100%);
+    transform: skewX(-25deg);
+}
+.news-small-2-hover:hover > .news-small-2-hover-img::before{
+    left:123%;
+    transition: all 1s ease;
 }
 @media screen and (min-width:1024px) and (max-width:1081px){
     .button-news-next-1{

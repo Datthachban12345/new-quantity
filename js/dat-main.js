@@ -32,16 +32,10 @@ var swiper2 = new Swiper(".new-swiper-2", {
     nextEl: ".button-news-next-2",
     prevEl: ".button-news-prev-2",
   },
-  on: {
-    init: function () {
-      const paginationEl = document.querySelector('.swiper-pagination-dat2');
-      document.querySelector('.new-swiper-2').appendChild(paginationEl);
-  }
-},
 });
 
 const counters = document.querySelectorAll('.quantity-number-title');
-    
+
 const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
     return (
@@ -54,13 +48,21 @@ const isInViewport = (element) => {
 
 const updateCount = (counter, duration) => {
     const target = +counter.getAttribute('data-target');
-    const increment = target / (duration / 10); // Điều chỉnh bước tăng để đồng đều
+    const startValue = 0;
+    const incrementTime = 10; // thời gian giữa các bước tăng (10ms)
+    const totalSteps = duration / incrementTime;
+    const increment = (target - startValue) / totalSteps;
+
+    let currentValue = startValue;
+    let steps = 0;
 
     const animate = () => {
-        const current = +counter.innerText;
-        if (current < target) {
-            counter.innerText = Math.ceil(current + increment);
-            setTimeout(animate, 10);
+        currentValue += increment;
+        steps++;
+
+        if (steps < totalSteps) {
+            counter.innerText = Math.ceil(currentValue);
+            setTimeout(animate, incrementTime);
         } else {
             counter.innerText = target;
         }
@@ -71,7 +73,6 @@ const updateCount = (counter, duration) => {
 
 const startCounters = () => {
     const duration = 2000; // Thời gian hoàn thành (2 giây)
-
     counters.forEach(counter => {
         if (isInViewport(counter) && !counter.classList.contains('visible')) {
             counter.classList.add('visible');
@@ -81,4 +82,4 @@ const startCounters = () => {
 };
 
 window.addEventListener('scroll', startCounters);
-window.addEventListener('load', startCounters); // Kiểm tra khi tải trang
+window.addEventListener('load', startCounters);
